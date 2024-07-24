@@ -46,6 +46,7 @@ Sample Okta Event - Failed Login:
 4. Select the log type "Okta.SystemLog"
 5. Under "Detect" select "Python Editor"
 6. Under "Detect" write:
+       1. Under Rule Funtion write:
         - Import the deep_get function from the panther_base_helpers library `from panther_base_helpers import deep_get`
         - Return the event for a login and the event for a failed login result using the deep_get function `return event.get("eventType") == 'user.session.start' and deep_get(event, 'outcome', 'result') == "FAILURE"`
 8. Make sure "Create Alert" is set to "On" 

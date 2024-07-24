@@ -44,17 +44,18 @@ Sample Okta Event - Failed Login:
 2. Select "Rule"
 3. Create a unique title for your detection name Example: "[YOUR NAME]'s Failed Login Detection"
 4. Select the log type "Okta.SystemLog"
-5. Under "Rule" select "Python Editor"
-6. Under "Set Alert Fields" set Severity to "Medium"
-7. Select "Functions & Tests":
-    1. Under Rule Funtion write:
+5. Under "Detect" select "Python Editor"
+6. Under "Detect" write:
         - Import the deep_get function from the panther_base_helpers library `from panther_base_helpers import deep_get`
         - Return the event for a login and the event for a failed login result using the deep_get function `return event.get("eventType") == 'user.session.start' and deep_get(event, 'outcome', 'result') == "FAILURE"`
-    2. Under Unit Test:
-        - Create a Unit Test
+7. Make sure "Create Alert" is set to "On" 
+8. Under "Required Fields" set Severity to "Medium"
+9. Skip "Optional Fields" for now
+10. Under "Test":
+        - Add New 
         - Copy and paste the sample event from Okta above.
         - We will use this to _test_ our detection.
-8. The final detection should look something like this:
+12. The final detection should look something like this:
 
     ``` python
     from panther_base_helpers import deep_get
@@ -64,7 +65,7 @@ Sample Okta Event - Failed Login:
     
     ```
 
-9. Finally, let's improve this detection by setting a threshold for this alert in the "Optional Fields" menu , so we only get an alert triggered if there are 5 failed logins within a 15 minute interval.
+13. Finally, let's improve this detection by scrolling back to "Optional Fields" and adding a threshold for this alert, so we only get an alert triggered if there are 5 failed logins within a 15 minute interval.
 ![Threshold and depduplication](/img/depuplication.png)
 
 ___________________________________________________

@@ -38,7 +38,7 @@ Sample Okta Event - Failed Login:
 }
 ```
 
-### Lab 1: Exercise 1
+### Lab 1: Creating a Custom Rule - Detect Multiple Failed Logins
 
 1. In the Panther Console, navigate to Build > Detections > Create New
 2. Select "Rule"
@@ -70,13 +70,13 @@ Sample Okta Event - Failed Login:
 
 ___________________________________________________
 
-## Lab 2 - Data Onboarding, Packs & Detected Admin Console Access
+## Lab 2 - Detect Successful Okta Admin Console Login
 
 In this exercise, we will write a new detection using what we have learned. If we look at Okta's authentication logs, no indicator states that the user is an administrator. However, once an admin signs in, they are directed to the admin console, which Okta logs as a separate event.
 
 Actions to perform:
 
-1. The facilitator will log out of a Developer Okta instance and back in to generate data that will stream to Panther.
+1. The facilitator will log out of a Okta Developer instance and back in to generate data that will stream into Panther.
 2. In the Panther Console, navigate to Investigate > Search and search for recent Okta event logs.
     * All Data
     * Under "All Tables" select Okta SystemLog
@@ -302,17 +302,9 @@ By utilzing a pre-packaged detection, we can easily modify an existing detection
 
 ___________________________________________________
 
-## Lab 4: Purple Teaming Detections
+## Lab 4: Investigate Malicious Activities and Write New Detections
 
-The facilitator will run offensive operations against our Okta Developer account using Dorothy, this will generate attack data in our Security Data Lake that we will use to develop hypotheses for new detections. 
-
-
-
-___________________________________________________
-
-## Lab 4: Using Investigate and a Security Data Lake
-
-1. Now let's go back to Panther and go to Search to see what data the activities in Dorothy generated, select the okta_systemlog table and click search. This will default sort to the most recent events first. We want to make sure we add the eventType field to our search results. 
+1. Now let's go back to Panther and go to Search to see what data the activities in Dorothy generated, select the Okta SystemLog table and click search. This will default sort to the most recent events first. We want to make sure we add the eventType field to our search results. 
     ![Query Builder ](/img/query_builder1.png)
 2. In our results we should see some interesting events that indicate the creation of a new user as well as the escalation of that user's privileges.
   

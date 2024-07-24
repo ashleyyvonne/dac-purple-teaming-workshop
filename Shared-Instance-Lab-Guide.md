@@ -1,9 +1,9 @@
 
-# Welcome to Purple Teaming with Detection-as-Code for Modern SIEM
+# Welcome to Panther's Workshop on Purple Teaming with Detection-as-Code!
 
 This guide will provide you with a step-by-step of all the commands we will use throughout this workshop. Please reference it as we move forward. If you have questions, feel free to ask your group moderator.
 
-## Lab 1 - Writing Our First Detection
+## Lab 1: Creating a Custom Rule - Detect Multiple Failed Logins
 
 Using the rule function and other pre-existing helper functions, creating a detection is extremely efficient in Panther. For this exercise, you will use the Panther console to create your first detection.
 
@@ -37,8 +37,6 @@ Sample Okta Event - Failed Login:
  "p_parse_time": "2023-01:23 10:02:33.650807"
 }
 ```
-
-### Lab 1: Creating a Custom Rule - Detect Multiple Failed Logins
 
 1. In the Panther Console, navigate to Build > Detections > Create New
 2. Select "Rule"
@@ -221,7 +219,7 @@ Actions to perform:
 
 ___________________________________________________
 
-## Lab 3: Modifying Existing Detections & Detecting API Key Creation
+## Lab 3: Clone & Modify an Existing Rule - Detect Okta API Key Created
 
 By utilzing a pre-packaged detection, we can easily modify an existing detection to tune to our environment. By using the python functions that Panther provides, code templates are easily available.
 
@@ -299,6 +297,14 @@ By utilzing a pre-packaged detection, we can easily modify an existing detection
 
 9. Test your changes using the unit test
 10. Save Changes
+
+
+___________________________________________________
+
+## Lab 4: The Setup
+
+The facilitator will run offensive operations against our Okta Developer account using Dorothy, this will generate attack data in our Security Data Lake that we will use to develop hypotheses for new detections. 
+
 
 ___________________________________________________
 

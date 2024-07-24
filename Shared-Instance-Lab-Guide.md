@@ -78,10 +78,12 @@ Actions to perform:
 
 1. The facilitator will log out of a Developer Okta instance and back in to generate data that will stream to Panther.
 2. In the Panther Console, navigate to Investigate > Search and search for recent Okta event logs.
-    - Database: panther_logs.public
-    - Table: okta_systemlog
-    - Add "eventType" in the column search field and add the column to our search results
-    - You should see an event that looks like this in Search, we will copy and past that JSON into the test field of our detection.
+    * All Data
+    * Under "All Tables" select Okta SystemLog
+    * Time set to Last Hour
+    * On the left-hand side, under "Available Fields" click the drop-down for Okta SystemLog and add "eventType"
+    * Now "eventType" will show under "Selected Fields"
+    * You should see an event that looks like this in Search, we will copy and past that JSON into the test field of our detection.
 
         <details>
             <summary> Sample Okta Event </summary>
@@ -89,8 +91,8 @@ Actions to perform:
         ``` json
         {
          "actor": {
-          "alternateId": "lemmy@heavymetals.io",
-          "displayName": "Lemmy Kilmster",
+          "alternateId": "gamora@gotg.com",
+          "displayName": "Gamora ZW Ben Titan",
           "id": "00u84z2ve37HTBEAp5d7",
           "type": "User"
          },
@@ -136,20 +138,20 @@ Actions to perform:
           ""
          ],
          "p_any_emails": [
-          "lemmy@heavymetals.io"
+          "gamora@gotg.com"
          ],
          "p_any_ip_addresses": [
           ""
          ],
-         "p_event_time": "2023-02-03 18:49:54.461",
+         "p_event_time": "2024-02-03 18:49:54.461",
          "p_log_type": "Okta.SystemLog",
-         "p_parse_time": "2023-02-03 18:51:36.242",
+         "p_parse_time": "2024-02-03 18:51:36.242",
          "p_row_id": "ead08fa06833fd8afdd5ed981604",
          "p_schema_version": 0,
          "p_source_id": "1cb8ad2c-a88c-4eff-b7b7-aa9473638728",
-         "p_source_label": "WorkshopOkta",
-         "p_timeline": "2023-02-03 18:49:54.461",
-         "published": "2023-02-03 18:49:54.461",
+         "p_source_label": "Okta-Dev-AYH",
+         "p_timeline": "2024-02-03 18:49:54.461",
+         "published": "2024-02-03 18:49:54.461",
          "request": {
           "ipChain": [
            {
@@ -178,8 +180,8 @@ Actions to perform:
          "severity": "INFO",
          "target": [
           {
-           "alternateId": "lemmy@heavymetals.io",
-           "displayName": "Lemmy Kilmster",
+           "alternateId": "gamora@gotg.com",
+           "displayName": "Gamora ZW Titan",
            "id": "00u84z2ve37HTBEAp5d7",
            "type": "AppUser"
           }

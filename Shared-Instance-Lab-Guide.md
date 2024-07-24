@@ -19,8 +19,8 @@ Sample Okta Event - Failed Login:
 ``` json
 {
  "actor": {
-  "alternateId": "lemmy@heavymetals.io",
-  "displayName": "Lemmy Kilmister",
+  "alternateId": "pquill@gotg.com",
+  "displayName": "Peter Quill",
   "id": "0u7gkf3fd41J4kku5d7",
   "type": "User"
  },
@@ -32,7 +32,7 @@ Sample Okta Event - Failed Login:
   "reason": "INVALID_CREDENTIALS",
   "result": "FAILURE"
  },
- "p_event_time": "2023-01-23 09:59:53.650807",
+ "p_event_time": "2024-01-23 09:59:53.650807",
  "p_log_type": "Okta.SystemLog",
  "p_parse_time": "2023-01:23 10:02:33.650807"
 }

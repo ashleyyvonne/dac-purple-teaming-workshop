@@ -229,10 +229,10 @@ By utilzing a pre-packaged detection, we can easily modify an existing detection
 
 - [What are Packs?](https://docs.panther.com/writing-detections/detection-packs)
 
-1. In the Panther Console, Navigate to Build > Packs > Okta Pack
-2. Select the Okta.APIKey.Created rule
+1. In the Panther Console, Navigate to Build > Packs > Panther Okta Pack
+2. Select the "Okta API Key Created" rule
 3. In the navigation select Clone  
-4. Add your name at the end of the detection- Sample " Okta API Key Created Lemmy Kilmster"
+4. Add your name at the end of the detection- Sample "Okta API Key Created by Thanos"
 5. Grab the severity function from the [templates page](https://github.com/panther-labs/panther-analysis/blob/master/templates/example_rule.py) or below:
 
     ``` python
@@ -251,7 +251,7 @@ By utilzing a pre-packaged detection, we can easily modify an existing detection
     ``` json
     {
      "debugContext": {},
-     "published": "2021-01-08 21:28:34.875",
+     "published": "2024-01-08 21:28:34.875",
      "eventType": "system.api_token.create",
      "version": "0",
      "legacyEventType": "api.token.create",
@@ -263,8 +263,8 @@ By utilzing a pre-packaged detection, we can easily modify an existing detection
      "severity": "INFO",
      "displayMessage": "Create API token",
      "actor": {
-      "alternateId": "lemmy@heavymetals.io",
-      "displayName": "Lemmy Kilmster",
+      "alternateId": "pquill@gotg.com",
+      "displayName": "Peter Quill",
       "id": "00u3q14ei6KUOm4Xi2p4",
       "type": "User"
      },
@@ -289,7 +289,7 @@ By utilzing a pre-packaged detection, we can easily modify an existing detection
 
     ``` python
     def severity(event):
-        if deep_get(event,"actor","alternateId") == "lemmy@heavymetals.io":
+        if deep_get(event,"actor","alternateId") == "pquill@gotg.com":
             return "LOW"
         return "HIGH"
     
@@ -319,7 +319,7 @@ ___________________________________________________
 3. Based on what we have learned let's explore these events and write a couple of new detections:
     - Write a detection that will trigger when a new user is created, include additional context such as the user(s) created.
     - Write a detection that will trigger when a user's permissions are escalated and include additional context regarding who did it and what accounts were affected.
-    - Hints: look for these eventTypes `user.account.privilege.grant` and `user.lifecycle.create`
+    - Hints: look for these eventTypes `user.lifecycle.create` and `user.account.privilege.grant`
 
     <details>
     	<summary>Click to view answer for accounts created </summary>
